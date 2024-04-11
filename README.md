@@ -44,3 +44,18 @@ pnpm lint:eslint
 pnpm lint:format
 pnpm lint:stylelint
 ```
+
+## 提交规范
+
+### commitlint
+
+commitlint 是一个 Git 提交信息检查工具，可以检测提交信息的格式问题。
+
+### cz-git
+
+cz-git 是一个 Git 提交信息规范工具，可以自动生成符合规范格式的提交信息。
+
+```shell
+pnpm commit
+``
+```
