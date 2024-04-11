@@ -12,12 +12,13 @@
 		"lint:stylelint": "stylelint \"**/*.{css,scss,vue,html}\" --fix",
 		"prepare": "husky install",
 		"lint:lint-staged": "lint-staged",
-		"commit": "git-cz"
+		"commit": "git pull && git add -A && git-cz && git push"
 	},
 	"dependencies": {
 		"vue": "^3.4.21"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^19.2.1",
 		"@commitlint/config-conventional": "^19.1.0",
 		"@eslint/js": "^9.0.0",
 		"@types/node": "^20.12.7",

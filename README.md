@@ -45,17 +45,31 @@ pnpm lint:format
 pnpm lint:stylelint
 ```
 
-## 提交规范
+## 全自动提交代码
 
-### commitlint
-
-commitlint 是一个 Git 提交信息检查工具，可以检测提交信息的格式问题。
-
-### cz-git
+```text
+pnpm commit
+// 或者
+npm run commit
+```
 
 cz-git 是一个 Git 提交信息规范工具，可以自动生成符合规范格式的提交信息。
+![alt text](./doc/image.png)
+
+### 手动 git 提交要规范
+
+如：git commit -m "feat: 新增功能"
 
 ```shell
-pnpm commit
-``
+	'feat', // 新增功能
+	'fix', // 修复缺陷
+	'docs', // 文档变更
+	'style', // 代码格式（不影响功能，例如空格、分号等格式修正）
+	'refactor', // 代码重构（不包括 bug 修复、功能新增）
+	'perf', // 性能优化
+	'test', // 添加疏漏测试或已有测试改动
+	'build', // 构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）
+	'ci', // 修改 CI 配置、脚本
+	'revert', // 回滚 commit
+	'chore', // 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）
 ```
