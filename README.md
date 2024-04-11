@@ -21,11 +21,15 @@
 ## 代码规范
 ### ESLint + Prettier
 ESLint 与 Prettier 通常是一起使用的，前者只负责检测修复语法规则，后者负责代码格式化。
+### stylelint
+stylelint 是一个 CSS 语法检查工具，可以检测 CSS 代码的错误和风格问题。
+
 ### 格式化命令
 
 ```text
 pnpm lint:eslint
 pnpm lint:format
+pnpm lint:stylelint
 ```
 
 

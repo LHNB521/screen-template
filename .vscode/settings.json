@@ -38,7 +38,8 @@
 	"stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"],
 	// 为ESLint启用“保存时自动修复”，并且仍然具有格式和快速修复功能
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "always"
+		"source.fixAll": "always",
+		"source.fixAll.stylelint": "always"
 	},
 	// 关闭vetur的js/ts/html的formatter。html用eslint-plugin-vue格式化。
 	// js/ts程序用eslint，防止vetur中的prettier与eslint格式化冲突
