@@ -53,9 +53,6 @@ pnpm commit
 npm run commit
 ```
 
-cz-git 是一个 Git 提交信息规范工具，可以自动生成符合规范格式的提交信息。
-![alt text](./doc/image.png)
-
 ### 手动 git 提交要规范
 
 如：git commit -m "feat: 新增功能"
