@@ -1,18 +1,64 @@
 {
-  "eslint.experimental.useFlatConfig": true, //, 启用 eslint 配置扁平化
-	"editor.formatOnSave": true, // 保存时进行格式化
-	"editor.defaultFormatter": "dbaeumer.vscode-eslint", // 设置 ESLint 为默认格式化工具
-	"eslint.format.enable": true, // 启用 ESLint 格式化下面添加入 validated 的文件
-	"eslint.validate": [
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"vue",
-		"html",
-		"markdown",
-		"json",
-		"jsonc",
-		"yaml"
-  ],
+	"files.eol": "\n", // 文件结束符
+	"eslint.format.enable": true, // 开启保存时自动修复
+	"editor.codeLens": true, // 显示行号
+	"editor.tabSize": 2, // 重新设定tabsize
+	"editor.detectIndentation": false, // 禁用自动检测缩进
+	// 将prettier设置为默认格式化程序(在编辑器中有可能被其他Formatter占用，所以将prettier设置为默认Formatter)
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	// 关闭js/ts的默认format,统一用eslint进行格式化（tslint已经不维护了，所以转eslint吧）
+	"javascript.format.enable": false,
+	"typescript.format.enable": false,
+	// 保存时自动格式化 (根据根目录下‘.prettierrc文件配置项’)
+	"editor.formatOnSave": true,
+	// Enable per-language
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features",
+		"editor.formatOnSave": true
+	},
+	"[vue]": {
+		"editor.formatOnSave": true, // 交给 eslint
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"vetur.format.defaultFormatterOptions": {
+		"prettier": {
+			// Prettier option here
+			"trailingComma": "es5", // 多行时，尽可能打印尾随的逗号
+			"tabWidth": 2, // 会忽略vetur的tabSize配置
+			"useTabs": false, // 是否利用tab替代空格
+			"semi": false, // 句尾是否加;
+			"singleQuote": true, // 使用单引号而不是双引号
+			"arrowParens": "avoid" // allow paren-less arrow functions 箭头函数的参数使用圆括号
+		}
+	},
+	// 什么类型的文件需要遵守stylelint规则
+	"stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"],
+	// 为ESLint启用“保存时自动修复”，并且仍然具有格式和快速修复功能
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always"
+	},
+	// 关闭vetur的js/ts/html的formatter。html用eslint-plugin-vue格式化。
+	// js/ts程序用eslint，防止vetur中的prettier与eslint格式化冲突
+	"vetur.format.defaultFormatter.ts": "none",
+	"vetur.validation.script": true,
+	"vetur.format.options.tabSize": 4,
+	"vetur.format.options.useTabs": false,
+	"vetur.format.defaultFormatter.html": "js-beautify-html",
+	"vetur.format.defaultFormatter.js": "prettier",
+	"[markdown]": {
+		"editor.defaultFormatter": null,
+		"editor.formatOnSave": false
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "stylelint.vscode-stylelint"
+	}
 }
