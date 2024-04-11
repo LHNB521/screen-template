@@ -1,0 +1,18 @@
+{
+  "eslint.experimental.useFlatConfig": true, //, 启用 eslint 配置扁平化
+	"editor.formatOnSave": true, // 保存时进行格式化
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint", // 设置 ESLint 为默认格式化工具
+	"eslint.format.enable": true, // 启用 ESLint 格式化下面添加入 validated 的文件
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"html",
+		"markdown",
+		"json",
+		"jsonc",
+		"yaml"
+  ],
+}
