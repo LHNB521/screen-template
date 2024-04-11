@@ -9,4 +9,8 @@ export default defineConfig({
       '@': resolve(__dirname, './src') // 设置 `@` 指向 `src` 目录
     }
   },
+  server: {
+    port: 1209,
+    open: true,
+  }
 })
