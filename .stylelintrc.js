@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	// 继承推荐规范配置
 	extends: [
 		'stylelint-config-standard',
