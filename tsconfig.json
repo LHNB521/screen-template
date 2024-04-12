@@ -27,11 +27,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		}
-	},
-	"types": [
-		// 编译过程中被包含进来的类型声明文件
-		"node",
-		"vite/client"
-	]
+		},
+		"types": [
+			// 编译过程中被包含进来的类型声明文件
+			"node",
+			"vite/client"
+		],
+		"allowSyntheticDefaultImports": true
+	}
 }
