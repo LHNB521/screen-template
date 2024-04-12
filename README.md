@@ -70,3 +70,9 @@ npm run commit
 	'revert', // 回滚 commit
 	'chore', // 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）
 ```
+
+## 按需导入
+
+unplugin 自动导入 ：
+Element Plus 官方文档中推荐 按需自动导入 的方式，而此需要使用额外的插件 unplugin-auto-import 和 unplugin-vue-components 来导入要使用的组件。所以在整合 Element Plus 之前先了解下自动导入的概念和作用。
+概念 为了避免在多个页面重复引入 API 或 组件，由此而产生的自动导入插件来节省重复代码和提高开发效率。

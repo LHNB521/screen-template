@@ -33,3 +33,5 @@ declare module 'vite-plugin-eslint' {
 	const content: (rawOptions?: Options) => Plugin
 	export default content
 }
+declare module '@eslint/js'
+declare module 'eslint-plugin-vue'
