@@ -23,17 +23,6 @@
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"vetur.format.defaultFormatterOptions": {
-		"prettier": {
-			// Prettier option here
-			"trailingComma": "es5", // 多行时，尽可能打印尾随的逗号
-			"tabWidth": 2, // 会忽略vetur的tabSize配置
-			"useTabs": false, // 是否利用tab替代空格
-			"semi": false, // 句尾是否加;
-			"singleQuote": true, // 使用单引号而不是双引号
-			"arrowParens": "avoid" // allow paren-less arrow functions 箭头函数的参数使用圆括号
-		}
-	},
 	// 什么类型的文件需要遵守stylelint规则
 	"stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"],
 	// 为ESLint启用“保存时自动修复”，并且仍然具有格式和快速修复功能
@@ -41,14 +30,6 @@
 		"source.fixAll": "always",
 		"source.fixAll.stylelint": "always"
 	},
-	// 关闭vetur的js/ts/html的formatter。html用eslint-plugin-vue格式化。
-	// js/ts程序用eslint，防止vetur中的prettier与eslint格式化冲突
-	"vetur.format.defaultFormatter.ts": "none",
-	"vetur.validation.script": true,
-	"vetur.format.options.tabSize": 4,
-	"vetur.format.options.useTabs": false,
-	"vetur.format.defaultFormatter.html": "js-beautify-html",
-	"vetur.format.defaultFormatter.js": "prettier",
 	"[markdown]": {
 		"editor.defaultFormatter": null,
 		"editor.formatOnSave": false
