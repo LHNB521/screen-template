@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
 import pluginPrettierRecommendedConfigs from 'eslint-plugin-prettier/recommended'
 import parserVue from 'vue-eslint-parser'
+import autoImport from './auto-import.cjs'
 
 export default [
 	// eslint 默认推荐规则
@@ -20,6 +21,7 @@ export default [
 				...globals.browser,
 				...globals.es2020,
 				...globals.node,
+				...autoImport.globals, // 自动导入的变量
 			},
 			ecmaVersion: 2020,
 			parser: parserVue,
