@@ -15,6 +15,7 @@
 		"commit": "git pull && git add -A && git-cz && git push"
 	},
 	"dependencies": {
+		"element-plus": "^2.7.0",
 		"pinia": "^2.1.7",
 		"pinia-plugin-persistedstate": "^3.2.1",
 		"vue": "^3.4.21",
@@ -46,6 +47,7 @@
 		"typescript": "^5.2.2",
 		"typescript-eslint": "^7.6.0",
 		"unplugin-auto-import": "^0.17.5",
+		"unplugin-icons": "^0.18.5",
 		"unplugin-vue-components": "^0.26.0",
 		"vite": "^5.2.0",
 		"vite-plugin-eslint": "^1.8.1",
