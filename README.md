@@ -13,6 +13,36 @@
 
 ## 项目目录
 
+```text
+screen-template
+├── .husky                     // husky配置
+├── .vscode                    // vscode配置
+├── .editorconfig              // 编辑器配置
+├── .eslintrc-auto-import.json // 自动导入配置
+├── .gitignore                 // git忽略文件
+├── .stylelintrc.js            // stylelint配置
+├── auto-import.cjs            // 自动导入配置
+├── commitlint.config.cjs      // commitlint配置
+├── eslint.config.js           // eslint配置
+├── package.json               // 项目配置
+├── prettier.config.js         // prettier配置
+├── README.md                  // 项目说明
+├── tsconfig.json              // ts配置
+├── vite.config.ts             // 配置
+├── public                     // 静态资源
+└── src
+    ├── assets                 // 静态资源
+    ├── components             // 组件
+    ├── layouts                // 布局
+    ├── router                 // 路由
+    ├── store                  // 状态管理
+    ├── utils                  // 工具
+    ├── views                  // 页面
+    ├── types                  // 类型
+    ├── App.vue                // 入口文件
+    ├── main.ts                // 入口文件
+```
+
 ## 项目模板启动和打包
 
 1. npm install
