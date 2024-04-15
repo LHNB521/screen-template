@@ -55,4 +55,13 @@ export default defineConfig({
 		port: 1209,
 		open: true,
 	},
+	css: {
+		// CSS 预处理器
+		preprocessorOptions: {
+			scss: {
+				javascriptEnabled: true,
+				additionalData: `@use "@/styles/variables.scss" as *;`,
+			},
+		},
+	},
 })
