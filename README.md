@@ -36,6 +36,8 @@ screen-template
     ├── layouts                // 布局
     ├── router                 // 路由
     ├── store                  // 状态管理
+        ├── modules            // 模块
+        ├── index.ts           // 模块入口文件
     ├── utils                  // 工具
     ├── views                  // 页面
     ├── types                  // 类型
