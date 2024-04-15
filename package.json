@@ -15,6 +15,7 @@
 		"commit": "git pull && git add -A && git-cz && git push"
 	},
 	"dependencies": {
+		"pinia": "^2.1.7",
 		"vue": "^3.4.21"
 	},
 	"devDependencies": {
@@ -36,7 +37,6 @@
 		"postcss-scss": "^4.0.9",
 		"stylelint": "^16.3.1",
 		"stylelint-config-html": "^1.1.0",
-		"stylelint-config-prettier": "^9.0.5",
 		"stylelint-config-recess-order": "^5.0.0",
 		"stylelint-config-recommended-scss": "^14.0.0",
 		"stylelint-config-recommended-vue": "^1.5.0",
