@@ -7,4 +7,21 @@ import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', () => {
   const language = useStorage('language', defaultSettings.language)
+
+  /**
+   * 根据语言标识读取对应的语言包
+   */
+  const locale = computed(() => {
+    return language.value === 'en' ? en : zhCn
+  })
+
+  function changeLanguage(lang: string) {
+    language.value = lang
+  }
+
+  return {
+    language,
+    locale,
+    changeLanguage,
+  }
 })

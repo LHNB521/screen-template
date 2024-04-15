@@ -1,8 +1,11 @@
 <template>
-  <el-config-provider :locale="zhCN"></el-config-provider>
+  <el-config-provider :locale="locale">
+    <router-view />
+  </el-config-provider>
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from './store'
-const counterStore = useCounterStore()
+import { useAppStore } from '@/store'
+const appStore = useAppStore()
+const locale = computed(() => appStore.locale)
 </script>
