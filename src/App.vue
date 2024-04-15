@@ -1,6 +1,5 @@
 <template>
-  <el-button type="primary" @click="counterStore.increment">count++</el-button>
-  <HelloWorld msg="Vite + Vue" />
+  <el-config-provider :locale="zhCN"></el-config-provider>
 </template>
 
 <script setup lang="ts">

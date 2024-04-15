@@ -3,8 +3,8 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 import { useCounterStore } from './modules/counter-setup'
 
-const pinia = createPinia()
-pinia.use(piniaPluginPersistedstate)
+const store = createPinia()
+store.use(piniaPluginPersistedstate)
 
-export default pinia
+export default store
 export { useCounterStore }

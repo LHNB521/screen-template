@@ -33,7 +33,7 @@ screen-template
 └── src
     ├── assets                 // 静态资源
     ├── components             // 组件
-    ├── layouts                // 布局
+    ├── layout                // 布局
     ├── router                 // 路由
         ├── index.ts           // 路由配置
         ├── routes.ts          // 路由表
@@ -42,7 +42,7 @@ screen-template
         ├── index.ts           // 模块入口文件
     ├── utils                  // 工具
     ├── views                  // 页面
-    ├── types                  // 类型
+    ├── tyings                  // 类型
     ├── App.vue                // 入口文件
     ├── main.ts                // 入口文件
 ```
