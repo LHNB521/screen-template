@@ -6,3 +6,4 @@ store.use(piniaPluginPersistedstate)
 
 export { store }
 export * from './modules/app'
+export * from './modules/user'

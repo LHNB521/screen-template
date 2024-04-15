@@ -33,7 +33,9 @@ screen-template
 └── src
     ├── assets                 // 静态资源
     ├── components             // 组件
-    ├── layout                // 布局
+    ├── enums                  // 枚举
+    ├── layout                 // 布局
+    ├── plugins                // 插件
     ├── router                 // 路由
         ├── index.ts           // 路由配置
         ├── routes.ts          // 路由表
@@ -43,7 +45,7 @@ screen-template
     |—— styles                 // 样式
     ├── utils                  // 工具
     ├── views                  // 页面
-    ├── tyings                  // 类型
+    ├── tyings                 // 类型
     ├── App.vue                // 入口文件
     ├── main.ts                // 入口文件
     └── settings.ts            // 配置文件
