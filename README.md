@@ -40,11 +40,13 @@ screen-template
     ├── store                  // 状态管理
         ├── modules            // 模块
         ├── index.ts           // 模块入口文件
+    |—— styles                 // 样式
     ├── utils                  // 工具
     ├── views                  // 页面
     ├── tyings                  // 类型
     ├── App.vue                // 入口文件
     ├── main.ts                // 入口文件
+    └── settings.ts            // 配置文件
 ```
 
 ## 项目模板启动和打包
