@@ -3,11 +3,14 @@ import { RouteRecordRaw } from 'vue-router'
 export const constantRoutes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/login',
+    redirect: '/home',
   },
   {
     path: '/login',
     component: () => import('@/views/login/index.vue'),
-    meta: { hidden: true },
+  },
+  {
+    path: '/home',
+    component: () => import('@/views/home/index.vue'),
   },
 ]
