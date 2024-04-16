@@ -49,9 +49,9 @@ service.interceptors.response.use(
           type: 'warning',
         }).then(() => {
           const userStore = useUserStoreHook()
-          // userStore.resetToken().then(() => {
-          //   location.reload()
-          // })
+          userStore.resetToken().then(() => {
+            location.reload()
+          })
         })
       } else {
         ElMessage.error(msg || '系统出错')

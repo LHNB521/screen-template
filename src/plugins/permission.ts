@@ -1,5 +1,6 @@
 import router from '@/router'
 import { usePermissionStore, useUserStore } from '@/store'
+import { RouteRecordRaw } from 'vue-router'
 
 export function setupPermission() {
   // 白名单路由
@@ -24,6 +25,11 @@ export function setupPermission() {
           const permissionStore = usePermissionStore()
           try {
             const { roles } = await userStore.getUserInfo()
+            const accessRoutes = await permissionStore.generateRoutes(roles)
+            accessRoutes.forEach((route: RouteRecordRaw) => {
+              router.addRoute(route)
+            })
+            next({ ...to, replace: true })
           } catch {
             // 移除 token 并跳转登录页
             await userStore.resetToken()
