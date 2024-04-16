@@ -37,6 +37,7 @@ export default [
       'vue/v-on-event-hyphenation': 'off', // html元素上事件函数名使用短横线连接
       'vue/multi-word-component-names': ['off'], // 组件名应该多个词组成
       'vue/no-mutating-props': 'warn', // props 参数应该不能直接修改
+      '@typescript-eslint/no-explicit-any': ['off'],
     },
   },
   {
