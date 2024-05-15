@@ -114,3 +114,11 @@ npm run commit
 unplugin 自动导入 ：
 Element Plus 官方文档中推荐 按需自动导入 的方式，而此需要使用额外的插件 unplugin-auto-import 和 unplugin-vue-components 来导入要使用的组件。所以在整合 Element Plus 之前先了解下自动导入的概念和作用。
 概念 为了避免在多个页面重复引入 API 或 组件，由此而产生的自动导入插件来节省重复代码和提高开发效率。
+
+## pnpm 检查依赖版本和升级
+
+```bash
+pnpm outdated # 检查依赖版本
+pnpm update xxx@latest # 升级依赖
+pnpm update --latest # 升级所有依赖
+```
