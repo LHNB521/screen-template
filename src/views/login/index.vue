@@ -14,7 +14,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { loginApi } from '@/api/user'
+import { useUserStore } from '@/store'
+
+const userStore = useUserStore()
 
 const name = ref('')
 const form = reactive({
@@ -22,10 +24,9 @@ const form = reactive({
   password: 'admin123456',
 })
 // 登录
-const login = () => {
-  loginApi(form).then((res) => {
-    console.log(res)
-  })
+const login = async () => {
+  const res = await userStore.login(form)
+  console.log(res)
 }
 onMounted(() => {
   name.value = '登录'

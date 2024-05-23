@@ -9,3 +9,11 @@ export interface UserInfo {
   roles: string[]
   perms: string[]
 }
+
+/**
+ * 登录请求
+ */
+export interface LoginData {
+  name?: string
+  password?: string
+}
