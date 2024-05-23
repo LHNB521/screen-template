@@ -4,16 +4,13 @@ import { Local } from '@/utils/local'
 import { tansParams } from '@/utils/lh'
 import cache from '@/plugins/cache'
 import { HttpStatus } from '@/enums/RespEnum'
+import { errorCode } from '@/utils/errorCode'
+import { encryptBase64, encryptWithAes, generateAesKey, decryptWithAes, decryptBase64 } from '@/utils/crypto'
+import { decrypt, encrypt } from './jsencrypt'
 
+const encryptHeader = 'encrypt-key'
 // 是否显示重新登录
 export const isRelogin = { show: false }
-
-const errorCode: any = {
-  '401': '认证失败，无法访问系统资源',
-  '403': '当前操作没有权限',
-  '404': '访问资源不存在',
-  default: '系统未知错误，请反馈给管理员',
-}
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 // 创建 axios 实例
@@ -29,6 +26,8 @@ service.interceptors.request.use(
     const isToken = (config.headers || ({} as any)).isToken === false
     // 是否需要防止数据重复提交
     const isRepeatSubmit = (config.headers || ({} as any)).repeatSubmit === false
+    // 是否需要加密
+    const isEncrypt = (config.headers || ({} as any)).isEncrypt === 'true'
 
     if (Local.get('token') && !isToken) {
       config.headers['Authorization'] = 'Bearer ' + Local.get('token') // 让每个请求携带自定义token 请根据实际情况自行修改
@@ -64,6 +63,18 @@ service.interceptors.request.use(
         }
       }
     }
+
+    // 当开启参数加密
+    if (isEncrypt && (config.method === 'post' || config.method === 'put')) {
+      // 生成一个 AES 密钥
+      const aesKey = generateAesKey()
+      config.headers[encryptHeader] = encrypt(encryptBase64(aesKey))
+      config.data =
+        typeof config.data === 'object'
+          ? encryptWithAes(JSON.stringify(config.data), aesKey)
+          : encryptWithAes(config.data, aesKey)
+    }
+
     // FormData数据去请求头Content-Type
     if (config.data instanceof FormData) {
       delete config.headers['Content-Type']
@@ -78,6 +89,20 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
   (response: AxiosResponse) => {
+    // 加密后的 AES 秘钥
+    const keyStr = response.headers[encryptHeader]
+    // 加密
+    if (keyStr != null && keyStr != '') {
+      const data = response.data
+      // 请求体 AES 解密
+      const base64Str = decrypt(keyStr)
+      // base64 解码 得到请求头的 AES 秘钥
+      const aesKey = decryptBase64(base64Str.toString())
+      // aesKey 解码 data
+      const decryptData = decryptWithAes(data, aesKey)
+      // 将结果 (得到的是 JSON 字符串) 转为 JSON
+      response.data = JSON.parse(decryptData)
+    }
     // 未设置状态码则默认成功状态
     const code = response.data.code || HttpStatus.SUCCESS
     // 获取错误信息
