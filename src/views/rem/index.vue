@@ -4,4 +4,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useFlexible } from '@/hooks'
+// 响应式
+useFlexible(window, document)
+</script>
