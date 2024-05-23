@@ -23,9 +23,9 @@ const form = reactive({
 })
 // 登录
 const login = () => {
-  loginApi(form)
-    .then((res) => {})
-    .catch((err) => {})
+  loginApi(form).then((res) => {
+    console.log(res)
+  })
 }
 onMounted(() => {
   name.value = '登录'

@@ -12,7 +12,7 @@ export function getUserInfoApi(): AxiosPromise<UserInfo> {
 
 export function loginApi(data: any): AxiosPromise<any> {
   return request({
-    url: '/user/login',
+    url: '/api/login',
     method: 'post',
     data,
   })
