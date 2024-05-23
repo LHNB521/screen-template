@@ -13,4 +13,8 @@ export const constantRoutes: RouteRecordRaw[] = [
     path: '/home',
     component: () => import('@/views/home/index.vue'),
   },
+  {
+    path: '/rem',
+    component: () => import('@/views/rem/index.vue'),
+  },
 ]
