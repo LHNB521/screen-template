@@ -27,6 +27,5 @@ export default {
         ignorePseudoClasses: ['global', 'export', 'v-deep', 'deep'],
       },
     ],
-    'import-notation': 'string' | 'url',
   },
 }

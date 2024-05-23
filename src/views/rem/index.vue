@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { useFlexible } from '@/hooks'
+import { useFlexible } from '@/hooks/useFlexble'
 // 响应式
 useFlexible(window, document)
 </script>
