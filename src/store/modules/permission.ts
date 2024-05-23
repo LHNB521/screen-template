@@ -8,11 +8,7 @@ export const usePermissionStore = defineStore('permission', () => {
   const setRoutes = (newRoutes: RouteRecordRaw[]) => {
     routes.value = constantRoutes.concat(newRoutes)
   }
-  function generateRoutes(roles: string[]) {
-    return new Promise<RouteRecordRaw[]>((resolve, reject) => {
-      // 获取路由接口
-    })
-  }
+  function generateRoutes() {}
 
   return {
     routes,
