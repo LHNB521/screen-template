@@ -4,7 +4,7 @@
 import { shallowReadonly, ref } from 'vue'
 
 const flexiableRatio = ref(1)
-const SCREEN_WIDTH = 1440 // 设定的浏览器的基准宽度
+const SCREEN_WIDTH = 1920 // 设定的浏览器的基准宽度
 
 /**
  * 启用自适应
@@ -38,9 +38,9 @@ export const useFlexible = (window: any, document: any) => {
 
   updateScreenSize()
 
-  // reset rem unit on page resize
+  // 调整页面大小时重置rem单位
   window.addEventListener('resize', updateScreenSize)
-  window.addEventListener('pageshow', function (e) {
+  window.addEventListener('pageshow', function (e: { persisted: any }) {
     if (e.persisted) {
       updateScreenSize()
     }
