@@ -14,6 +14,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import router from '@/router'
 import { useUserStore } from '@/store'
 
 const userStore = useUserStore()
@@ -24,9 +25,12 @@ const form = reactive({
   password: 'admin123456',
 })
 // 登录
-const login = async () => {
-  const res = await userStore.login(form)
-  console.log(res)
+const login = () => {
+  userStore.login(form).then((res: any) => {
+    if (!res) {
+      router.push({ path: '/' })
+    }
+  })
 }
 onMounted(() => {
   name.value = '登录'
